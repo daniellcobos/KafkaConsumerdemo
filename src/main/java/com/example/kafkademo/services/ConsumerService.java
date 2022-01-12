@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public final class ConsumerService {
     private static final Logger logger = LoggerFactory.getLogger(ConsumerService.class);
 
-    @KafkaListener(topics = "login_topic", groupId = "group_id")
+    @KafkaListener(topics = "login_topic", groupId = "javaApp")
     public void consume(Login message) {
         logger.info(message.getUser()+" " +message.getDate());
     }
